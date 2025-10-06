@@ -1,29 +1,34 @@
-// write a function that return the count of digits in a number
-
+// ✅ Problem: Write a function that returns the count of digits in a number
 function countInDigits(n) {
-  if (n == 0) return 1; // corner case 1
-  n = Math.abs(n); // corner case 2
+  // Case 1️⃣: if the number is exactly 0, it has 1 digit
+  if (n == 0) return 1;
 
-  // if(n)
+  // Case 2️⃣: if the number is negative, make it positive
+  // Because -234 and 234 both have the same number of digits
+  n = Math.abs(n);
 
+  // Initialize count variable to track total digits
   let count = 0;
 
+  // Repeat until number becomes 0
   while (n > 0) {
-    let lastDigit = n % 10;
-    console.log(lastDigit);
+    // Remove the last digit each time
     n = Math.floor(n / 10);
+
+    // Increase digit count
     count++;
   }
 
+  // Return the total digits found
   return count;
 }
 
-// corner case 1: what if num is zero (0)?
-// let count = 0;
-// corner case 2: what if num is negative (-)?
-// let count = -343;
-// corner case 3: what if num is so big?
-let count = 342342349085899903;
+// Try different test numbers
+// let countNum = 0;      // Test 1: zero case
+// let countNum = 1234;   // Test 2: normal positive number
+let countNum = -234; // Test 3: negative number
 
-// let count = 343;
-console.log("The Total Count Digits is = " + countInDigits(count));
+// Print result
+console.log(
+  `The count of digits in ${countNum} is: ${countInDigits(countNum)}`
+);
