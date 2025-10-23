@@ -2,7 +2,6 @@
 function reverseString(s) {
   // Get the total length of the array
   let arrLength = s.length;
-
   // We only need to go through half of the array
   // because we swap two elements at a time (start ↔ end)
   let halfArr = Math.floor(arrLength / 2);
