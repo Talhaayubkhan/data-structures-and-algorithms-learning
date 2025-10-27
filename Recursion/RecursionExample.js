@@ -1,5 +1,4 @@
 // print n to 1
-
 function printNums(nums) {
   if (nums == 0) return;
 
